@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/trigger/{data}', function ($data) {
+    echo "<p>You have sent $data</p>";
+    event(new App\Events\GetRequestEvent($data));
+});
