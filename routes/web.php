@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TriggerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,8 +17,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/trigger/{data}', function ($data) {
-    echo "<p>You have sent $data</p>";
-    event(new App\Events\GetRequestEvent($data));
+Route::get('/show', function () {
+    return view('show');
 });
+
+// Route::get('/trigger/{data}', function ($data) {
+//     echo "<p>You have sent $data</p>";
+//     event(new App\Events\GetRequestEvent($data));
+// });
+Route::get('/trigger', [TriggerController::class, 'index'])->name('index');
+
+Route::post('/trigger', [TriggerController::class, 'trigger'])->name('trigger');

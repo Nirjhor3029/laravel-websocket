@@ -1,0 +1,19 @@
+tut: https://www.linkedin.com/pulse/how-create-simple-real-time-web-app-laravel-sylvan-cahilog/
+
+
+Laravel websockets/beyond ccode:
+--------------------------------
+composer require "beyondcode/laravel-websockets:dev-master"
+
+php artisan migrate probem:
+-------------------------
+composer require doctrine/dbal
+
+Pusher problem:
+----------------
+composer require pusher/pusher-php-server ^VERSION --ignore-platform-reqs
+
+
+
+
+Details: https://freek.dev/1228-introducing-laravel-websockets-an-easy-to-use-websocket-server-implemented-in-php
